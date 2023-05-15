@@ -30,6 +30,12 @@ fn main() -> Result<(), Box<dyn Error>> {
     // 使用私钥对消息摘要进行签名
     let signature = EcdsaSig::sign(&message_digest, &keypair)?;
 
+    let signeture_bytes = signature.to_der()?;
+
+    println!("signeture_bytes {:?}", signeture_bytes);
+
+    let signature = EcdsaSig::from_der(&signeture_bytes)?;
+
     // 用公钥验证签名
     let is_signature_valid = signature.verify(&message_digest, &public_key)?;
 

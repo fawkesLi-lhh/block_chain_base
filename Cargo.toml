@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 openssl = "0.10"
 hex = "0.4"
+rand = "0.8"
 
 [[bin]]
 name = "ec_gen_by_hash"
@@ -16,3 +17,11 @@ path = "src/ec_gen_by_hash.rs"
 [[bin]]
 name = "ec_sign"
 path = "src/ec_sign.rs"
+
+[[bin]]
+name = "ec_ecdh"
+path = "src/ec_ecdh.rs"
+
+[[bin]]
+name = "ssl_aes"
+path = "src/ssl_aes.rs"
